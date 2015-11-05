@@ -1,0 +1,19 @@
+<html>
+<header>
+    <h1>Welcome to Questions View</h1>
+</header>
+<body>
+<div>
+{% if latest_questions %}
+    <ul>
+        {% for question in latest_questions %}
+            <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <label>No questions</label>
+{% endif %}
+</div>
+</body>
+
+</html>
